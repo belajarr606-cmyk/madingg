@@ -1,0 +1,22 @@
+# Gunakan image PHP 8.2 dengan Apache
+FROM php:8.2-apache
+
+# Install ekstensi MySQLi (karena project pakai MySQL)
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+
+# Aktifkan mod_rewrite Apache (opsional)
+RUN a2enmod rewrite
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Copy semua file project ke dalam container
+COPY . /var/www/html/
+
+# Set permission agar folder uploads bisa ditulis
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod -R 755 /var/www/html && \
+    chmod -R 777 /var/www/html/uploads
+
+# Expose port 80
+EXPOSE 80

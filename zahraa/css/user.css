@@ -1,0 +1,417 @@
+/* user.css - Tema Biru Soft */
+@import url('main.css');
+
+/* User Container */
+.user-container {
+    min-height: 100vh;
+    background: var(--biru-soft);
+    position: relative;
+    padding: 20px;
+}
+
+/* Navbar User */
+.user-navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px var(--biru-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.nav-brand h2 {
+    color: var(--biru-dark);
+    font-size: 1.5rem;
+}
+
+.nav-brand p {
+    color: var(--text-soft);
+    font-size: 0.9rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-menu a:hover {
+    background: linear-gradient(135deg, var(--biru-medium), var(--biru-dark));
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--biru-shadow);
+}
+
+.nav-menu a.logout {
+    background: #ef4444;
+    color: white;
+}
+
+.nav-menu a.logout:hover {
+    background: #dc2626;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background: linear-gradient(135deg, var(--biru-medium), var(--biru-dark));
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 30px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--biru-shadow);
+}
+
+.welcome-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.banner-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Search Section */
+.search-section {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px var(--biru-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.search-wrapper {
+    display: flex;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-wrapper input {
+    flex: 1;
+    padding: 15px 25px;
+    border: 2px solid var(--biru-pale);
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-wrapper input:focus {
+    border-color: var(--biru-medium);
+    box-shadow: 0 0 0 4px var(--biru-shadow);
+    outline: none;
+}
+
+.search-wrapper button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, var(--biru-medium), var(--biru-dark));
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.search-wrapper button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--biru-shadow);
+}
+
+/* Mading Grid */
+.mading-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.mading-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--biru-shadow);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mading-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--biru-shadow);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mading-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-image.no-image {
+    background: linear-gradient(135deg, var(--biru-pale), var(--biru-medium));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image.no-image span {
+    font-size: 4rem;
+    opacity: 0.5;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    color: var(--biru-dark);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.card-content .content-preview {
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-content .content-preview::after {
+    content: '...';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    padding-left: 5px;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed var(--biru-pale);
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--biru-medium), var(--biru-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.post-date {
+    color: var(--text-soft);
+    font-size: 0.8rem;
+}
+
+.read-more {
+    background: linear-gradient(135deg, var(--biru-medium), var(--biru-dark));
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.read-more:hover {
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px var(--biru-shadow);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    box-shadow: 0 10px 30px var(--biru-shadow);
+}
+
+.empty-state span {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    color: var(--biru-dark);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: var(--text-soft);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.page-link {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 12px;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px var(--biru-shadow);
+}
+
+.page-link:hover,
+.page-link.active {
+    background: linear-gradient(135deg, var(--biru-medium), var(--biru-dark));
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive User */
+@media (max-width: 768px) {
+    .user-navbar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .welcome-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .search-wrapper {
+        flex-direction: column;
+    }
+    
+    .mading-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-banner {
+        padding: 30px 20px;
+    }
+    
+    .welcome-banner h1 {
+        font-size: 1.5rem;
+    }
+    
+    .card-content h3 {
+        font-size: 1.3rem;
+    }
+}

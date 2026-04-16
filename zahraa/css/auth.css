@@ -1,0 +1,214 @@
+/* auth.css - Tema Biru Soft */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, #e8f4f8 0%, #d4eaf7 100%);
+}
+
+.auth-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(44, 125, 160, 0.15);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    animation: slideUp 0.8s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    color: #2c7da0;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(44,125,160,0.1);
+}
+
+.auth-header h2 {
+    font-size: 1.8rem;
+    color: #334155;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.auth-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #61a5c2, #2c7da0);
+    border-radius: 2px;
+    animation: widthGrow 0.5s ease-out 0.5s forwards;
+    width: 0;
+}
+
+@keyframes widthGrow {
+    to { width: 50px; }
+}
+
+.school-name {
+    font-size: 1rem;
+    color: #6c757d;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334155;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #d9f0f7;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: #ffffff;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #61a5c2;
+    box-shadow: 0 0 0 4px rgba(97,165,194,0.2);
+}
+
+.form-group input::placeholder {
+    color: #c9c9c9;
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #61a5c2, #2c7da0);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(44,125,160,0.3);
+}
+
+.btn-auth:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44,125,160,0.4);
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #d9f0f7;
+}
+
+.auth-links p {
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.auth-links a {
+    color: #2c7da0;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background: rgba(44,125,160,0.1);
+}
+
+.auth-links a:hover {
+    background: #2c7da0;
+    color: white;
+    transform: scale(1.05);
+}
+
+.alert {
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    position: relative;
+    padding-right: 40px;
+}
+
+.alert-error {
+    background: #ffe5e5;
+    color: #d63031;
+    border-left: 4px solid #d63031;
+}
+
+.alert-success {
+    background: #e5ffe5;
+    color: #27ae60;
+    border-left: 4px solid #27ae60;
+}
+
+.close-alert {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.close-alert:hover { opacity: 1; }
+
+.password-strength { margin-top: 8px; font-size: 0.85rem; }
+.strength-bar {
+    height: 4px;
+    background: #d9f0f7;
+    border-radius: 2px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+.strength-bar-fill { height: 100%; width: 0; transition: 0.3s; }
+.strength-weak { background: #ff7675; }
+.strength-medium { background: #fdcb6e; }
+.strength-strong { background: #00b894; }
+
+@media (max-width: 768px) {
+    .auth-box { padding: 30px 20px; }
+    .auth-header h1 { font-size: 1.8rem; }
+    .auth-header h2 { font-size: 1.5rem; }
+    .form-group input { padding: 12px 15px; }
+    .btn-auth { padding: 14px; }
+}
+
+@media (max-width: 480px) {
+    .auth-box { padding: 25px 15px; }
+    .auth-header h1 { font-size: 1.5rem; }
+    .auth-header h2 { font-size: 1.3rem; }
+    .school-name { font-size: 0.9rem; }
+}
